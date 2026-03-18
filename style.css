@@ -1,0 +1,88 @@
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #f8f9fa;
+    --text-color: #333;
+    --alert-color: #d9534f;
+    --success-color: #5cb85c;
+    --card-bg: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.branding { display: flex; flex-direction: column; }
+.team-name { font-size: 1.5rem; font-weight: bold; letter-spacing: 1px; }
+.vision { font-size: 0.9rem; font-style: italic; opacity: 0.9; margin-top: 5px; }
+
+.lang-selector select {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+h1, h2 { color: var(--primary-color); }
+h2 { border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem; margin-top: 0;}
+
+/* Video Section */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.video-wrapper iframe { width: 100%; height: 200px; border-radius: 8px; border: none; }
+.video-title { font-size: 0.9rem; text-align: center; margin-top: 0.5rem; font-weight: bold; }
+
+/* Scenarios & Quizzes */
+.lecture-text { margin-bottom: 1.5rem; }
+.quiz-box { background-color: #e9ecef; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; }
+.question-title { font-weight: bold; margin-bottom: 0.5rem; }
+.options-list { list-style-type: none; padding: 0; }
+.options-list li { margin-bottom: 0.5rem; }
+
+.quiz-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.quiz-btn:hover { background-color: #004494; }
+.feedback { margin-top: 0.5rem; font-weight: bold; font-size: 0.95rem;}
+
+footer { text-align: center; padding: 2rem 1rem; font-size: 0.85rem; color: #666; }

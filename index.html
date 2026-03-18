@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mask Off | Fraud Awareness in Kazakhstan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="branding">
+            <span class="team-name">MASK OFF</span>
+            <span id="ui-vision" class="vision">Creating a fraud-aware Kazakhstan where people stay safe from scams.</span>
+        </div>
+        <div class="lang-selector">
+            <select id="langSwitch" onchange="renderApp()">
+                <option value="en">English</option>
+                <option value="ru">Русский</option>
+                <option value="kk">Қазақша</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h1 id="ui-title">Welcome to Mask Off</h1>
+            <p id="ui-intro">Fraudsters are getting smarter, but we can outsmart them. Watch the videos below and read through our scenarios to protect yourself.</p>
+            
+            <h2 id="ui-video-title">Educational Videos</h2>
+            <div class="video-grid" id="video-container">
+                </div>
+        </div>
+
+        <div id="scenarios-container">
+            </div>
+    </div>
+
+    <footer>
+        <p><strong>Mask Off</strong> - Fraud Awareness Initiative<br>Nazarbayev University SLC Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
