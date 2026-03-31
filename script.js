@@ -690,7 +690,7 @@ function renderApp() {
         html += `</div>`; 
         scenariosContainer.innerHTML += html;
     });
-	const myEmail = "your.email@gmail.com"; 
+	const myEmail = "kuralzankabdolla@gmail.com"; 
 
     let feedbackHtml = `
         <div class="card feedback-card" style="margin-top: 40px; background-color: var(--card-bg); border: 2px solid var(--primary-color);">
