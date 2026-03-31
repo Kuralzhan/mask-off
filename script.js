@@ -8,7 +8,16 @@ const siteData = {
             video_title: "Learn How Scams Work",
             check_answer: "Check Answer",
             correct: "✅ Correct!",
-            incorrect: "❌ Incorrect. Please try again."
+            incorrect: "❌ Incorrect. Please try again.",
+			feedback_title: "Leave Feedback",
+            feedback_name: "Your Name",
+            feedback_email: "Your Email",
+            feedback_type: "Feedback Type",
+            feedback_type_1: "General Suggestion",
+            feedback_type_2: "Found a Bug",
+            feedback_type_3: "Question",
+            feedback_message: "Your Message",
+            feedback_submit: "Send Feedback"
         },
         videos: [
             { title: "English Explained", id: "kKwyHevGVJ0" },
@@ -203,7 +212,16 @@ const siteData = {
             video_title: "Узнайте, как работают мошенники",
             check_answer: "Проверить ответ",
             correct: "✅ Правильно!",
-            incorrect: "❌ Неправильно. Попробуйте еще раз."
+            incorrect: "❌ Неправильно. Попробуйте еще раз.",
+			feedback_title: "Оставить отзыв",
+            feedback_name: "Ваше имя",
+            feedback_email: "Ваш Email",
+            feedback_type: "Тип отзыва",
+            feedback_type_1: "Предложение",
+            feedback_type_2: "Нашел ошибку",
+            feedback_type_3: "Вопрос",
+            feedback_message: "Ваше сообщение",
+            feedback_submit: "Отправить"
         },
         videos: [
             { title: "Объяснение на английском", id: "kKwyHevGVJ0" },
@@ -398,7 +416,16 @@ const siteData = {
             video_title: "Алаяқтар қалай жұмыс істейтінін біліңіз",
             check_answer: "Жауапты тексеру",
             correct: "✅ Дұрыс!",
-            incorrect: "❌ Қате. Қайтадан байқап көріңіз."
+            incorrect: "❌ Қате. Қайтадан байқап көріңіз.",
+			feedback_title: "Пікір қалдыру",
+            feedback_name: "Атыңыз",
+            feedback_email: "Электрондық поштаңыз",
+            feedback_type: "Пікір түрі",
+            feedback_type_1: "Ұсыныс",
+            feedback_type_2: "Қате таптым",
+            feedback_type_3: "Сұрақ",
+            feedback_message: "Хабарламаңыз",
+            feedback_submit: "Жіберу"
         },
         videos: [
             { title: "Ағылшын тілінде түсіндіру", id: "kKwyHevGVJ0" },
@@ -663,6 +690,35 @@ function renderApp() {
         html += `</div>`; 
         scenariosContainer.innerHTML += html;
     });
+	const myEmail = "your.email@gmail.com"; 
+
+    let feedbackHtml = `
+        <div class="card feedback-card" style="margin-top: 40px; background-color: var(--card-bg); border: 2px solid var(--primary-color);">
+            <h2 style="text-align: center;">${data.ui.feedback_title}</h2>
+            
+            <form action="https://formsubmit.co/${myEmail}" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Mask Off Feedback!">
+
+                <input type="text" name="name" placeholder="${data.ui.feedback_name}" required style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                
+                <input type="email" name="email" placeholder="${data.ui.feedback_email}" required style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                
+                <select name="type" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                    <option value="Suggestion">${data.ui.feedback_type_1}</option>
+                    <option value="Bug">${data.ui.feedback_type_2}</option>
+                    <option value="Question">${data.ui.feedback_type_3}</option>
+                </select>
+
+                <textarea name="message" rows="4" placeholder="${data.ui.feedback_message}" required style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; resize: vertical;"></textarea>
+                
+                <button type="submit" class="quiz-btn" style="background-color: var(--primary-color); color: white; border: none; padding: 12px; border-radius: 5px; font-weight: bold; cursor: pointer;">
+                    ${data.ui.feedback_submit}
+                </button>
+            </form>
+        </div>
+    `;
+    scenariosContainer.innerHTML += feedbackHtml;
 }
 
 // --- QUIZ LOGIC ---
